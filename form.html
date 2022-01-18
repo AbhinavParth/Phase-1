@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/themes/redmond/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.14.0/css/ui.jqgrid.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/free-jqgrid/4.14.0/jquery.jqgrid.min.js"></script>
+    <script src="https://code.angularjs.org/1.3.0-rc.1/angular.min.js"></script>
+    <script src="index.js"></script>
+    <title>Document</title>
+</head>
+<body ng-controller = "maincontroller">
+    <form ng-submit = "display()" target="_self">
+        first Name: <input type="text" ng-model= "data.fname"  maxlength="100"><br><br>
+        last Name: <input type="text" ng-model = "data.lname"  maxlength="100"><br><br>
+        Date of Birth: <input type="date" ng-model= "data.dob" ><br><br>
+        Employee Address: <br><textarea cols="30" rows="10" ng-model= "data.ea"></textarea><br><br>
+        State:<select name="State" ng-model = "data.st">
+        <option value="Andhra Pradesh">Andhra Pradesh</option>
+        <option value="Arunanchal Pradesh">Arunanchal Pradesh</option>
+        </select><br><br>
+        PIN: <input type="text" pattern="[0-9]{6}" ng-model= "data.pin"><br><br>
+        Employee ID: <input type="number" ng-model = "data.ei"><br><br>
+        Date of Joining: <input type="date" min="2020-09-01" ng-model= "data.doj"><br><br>
+        <div ng-model= "data.dep">
+            Department: <br><input type="radio" id="dp1" name="dpt" value = "HR">HR
+            <input type="radio" id="dp2" name="dpt" value = "Sales">Sales
+            <input type="radio" id= "dp3" name="dpt" value = "Technology">Technology <br><br>
+        </div>
+        Insurance: <br>
+        <input type="checkbox" id = "hii" name = "insr"ng-model = "data.hi">I have health Insurance <br>
+        <input type="checkbox" id = "vii" name = "insr"ng-model = "data.vi">I have vehicle Insurance <br><br>
+        Mobile Number: <input type="tel" maxlength="10" ng-model = "data.mn"><br><br>
+        Email ID: <input type="email" ng-model = "data.em"><br><br>
+        <input type="reset"><br><br>
+        <input type="submit"><br><br>
+    </form>
+    <table id="mygrid"></table>
+    <!-- <table>
+        <tr>
+            <th>Sl No</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date of Birth</th>
+            <th>Employee Address</th>
+            <th>State</th>
+            <th>PIN</th>
+            <th>Employee ID</th>
+            <th>Date of Joining</th>
+            <th>Department</th>
+            <th>Health Insurance</th>
+            <th>Vehicle Insurance</th>
+            <th>Mobile Number</th>
+            <th>Email</th>
+        </tr>
+        <tr ng-repeat = "x in collection">
+            <td>{{$index| uppercase}}</td>
+            <td>{{x.fname | uppercase}}</td>
+            <td>{{x.lname}}</td>
+            <td>{{x.dob| date: dd-MM-yyyy}}</td>
+            <td>{{x.ea}}</td>
+            <td>{{x.st}}</td>
+            <td>{{x.pin}}</td>
+            <td>{{x.ei}}</td>
+            <td>{{x.doj | date: dd-MM-yyyy}}</td>
+            <td>{{x.dep}}</td>
+            <td>{{x.hi}}</td>
+            <td>{{x.vi}}</td>
+            <td>{{x.mn}}</td>
+            <td>{{x.em}}</td>
+            
+        </tr> -->
+    </table>
+    </body>
+</html>
